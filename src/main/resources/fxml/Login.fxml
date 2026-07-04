@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.pawpal.controller.LoginController">
+
+    <children>
+
+        <HBox prefHeight="600.0" prefWidth="900.0">
+
+            <!-- Left Side -->
+            <VBox alignment="CENTER"
+                  prefWidth="450"
+                  spacing="20"
+                  style="-fx-background-color:#F7EAD9;">
+
+                <children>
+
+                    <Label text="🐾 PawPal"
+                           style="-fx-font-size:34px;
+                                  -fx-font-weight:bold;
+                                  -fx-text-fill:#355E3B;" />
+
+                    <Label text="Pet Marketplace &amp; Adoption"
+                           style="-fx-font-size:18px;
+                                  -fx-text-fill:#666666;" />
+
+                    <Label text="Every Pet Deserves&#10;A Loving Home ❤️"
+                           style="-fx-font-size:24px;
+                                  -fx-font-weight:bold;
+                                  -fx-text-alignment:center;
+                                  -fx-text-fill:#355E3B;" />
+
+                </children>
+
+            </VBox>
+
+            <!-- Right Side -->
+
+            <VBox alignment="CENTER"
+                  prefWidth="450"
+                  spacing="15"
+                  style="-fx-background-color:white;">
+
+                <children>
+
+                    <Label text="Welcome Back"
+                           style="-fx-font-size:28px;
+                                  -fx-font-weight:bold;" />
+
+                    <TextField fx:id="txtEmail"
+                               promptText="Email Address"
+                               prefWidth="280"/>
+
+                    <PasswordField fx:id="txtPassword"
+                                   promptText="Password"
+                                   prefWidth="280"/>
+
+                    <Button text="Login"
+                            prefWidth="280"
+                            onAction="#login"
+                            style="-fx-background-color:#5C7C4F;
+                                   -fx-text-fill:white;
+                                   -fx-font-size:15px;
+                                   -fx-font-weight:bold;" />
+
+                    <Hyperlink text="Forgot Password?" />
+
+                    <Separator prefWidth="280"/>
+
+                    <Label text="Don't have an account?"/>
+
+                    <Button text="Register"
+                            prefWidth="280"
+                            onAction="#register"
+                            style="-fx-background-color:#D9B382;
+                                   -fx-text-fill:white;
+                                   -fx-font-size:15px;" />
+
+                </children>
+
+                <padding>
+                    <Insets top="30"
+                            bottom="30"
+                            left="40"
+                            right="40"/>
+                </padding>
+
+            </VBox>
+
+        </HBox>
+
+    </children>
+
+</AnchorPane>
