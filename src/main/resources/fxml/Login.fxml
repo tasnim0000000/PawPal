@@ -69,7 +69,8 @@
                                    -fx-font-size:15px;
                                    -fx-font-weight:bold;" />
 
-                    <Hyperlink text="Forgot Password?" />
+                    <Hyperlink text="Forgot Password?"
+                               onAction="#forgotPassword"/>
 
                     <Separator prefWidth="280"/>
 
@@ -77,7 +78,7 @@
 
                     <Button text="Register"
                             prefWidth="280"
-                            onAction="#register"
+                            onAction="#openRegister"
                             style="-fx-background-color:#D9B382;
                                    -fx-text-fill:white;
                                    -fx-font-size:15px;" />

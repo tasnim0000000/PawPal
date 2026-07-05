@@ -3,6 +3,7 @@ module com.example.pawpal {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires java.desktop;
 
     opens com.example.pawpal to javafx.fxml;
     opens com.example.pawpal.controller to javafx.fxml;

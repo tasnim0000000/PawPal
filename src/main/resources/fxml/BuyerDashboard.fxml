@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.pawpal.controller.BuyerDashboardController"
+            prefWidth="1200" prefHeight="750">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20"
+              style="-fx-background-color:#355E3B;-fx-padding:15;">
+            <children>
+                <Label text="🐾 PawPal" style="-fx-font-size:24;-fx-font-weight:bold;-fx-text-fill:white;"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Label fx:id="lblWelcome" text="Welcome, Buyer"
+                       style="-fx-text-fill:white;-fx-font-size:18;"/>
+                <Button text="Logout" onAction="#logout"/>
+            </children>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="10" prefWidth="220"
+              style="-fx-background-color:#4F6D4A;-fx-padding:20;">
+            <children>
+                <Button text="🏠 Dashboard" maxWidth="Infinity" onAction="#openDashboard"/>
+                <Button text="🐶 Browse Pets" maxWidth="Infinity" onAction="#openBrowsePets"/>
+                <Button text="📦 My Orders" maxWidth="Infinity" onAction="#openOrders"/>
+                <Button text="⭐ My Reviews" maxWidth="Infinity" onAction="#openReviews"/>
+                <Button text="👤 My Profile" maxWidth="Infinity" onAction="#openProfile"/>
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="20" style="-fx-background-color:#F7EAD9;-fx-padding:20;">
+            <children>
+                <Label text="Buyer Dashboard" style="-fx-font-size:28;-fx-font-weight:bold;"/>
+                <HBox spacing="20">
+                    <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
+                        <children><Label text="Available Pets"/><Label fx:id="lblAvailablePets" text="0"/></children>
+                    </VBox>
+                    <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
+                        <children><Label text="My Orders"/><Label fx:id="lblOrders" text="0"/></children>
+                    </VBox>
+                    <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
+                        <children><Label text="Reviews"/><Label fx:id="lblReviews" text="0"/></children>
+                    </VBox>
+                </HBox>
+                <Label text="Featured Pets" style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                <FlowPane hgap="20" vgap="20">
+                    <children>
+                        <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
+                            <children><Label text="🐶"/><Label text="Golden Retriever"/><Button text="View Details"/></children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
+                            <children><Label text="🐱"/><Label text="Persian Cat"/><Button text="View Details"/></children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
+                            <children><Label text="🐦"/><Label text="Cockatiel"/><Button text="View Details"/></children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
+                            <children><Label text="🐰"/><Label text="Rabbit"/><Button text="View Details"/></children>
+                        </VBox>
+                    </children>
+                </FlowPane>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
