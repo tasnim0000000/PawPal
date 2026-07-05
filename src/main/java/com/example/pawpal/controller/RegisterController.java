@@ -62,9 +62,7 @@ public class RegisterController {
         String password = txtPassword.getText();
         String confirmPassword = txtConfirmPassword.getText();
         String role = cmbRole.getValue();
-
-        // Empty Field Check
-
+        
         if (name.isEmpty() ||
                 phone.isEmpty() ||
                 email.isEmpty() ||
@@ -79,7 +77,6 @@ public class RegisterController {
             return;
         }
 
-        // Name Validation
 
         if (!isValidName(name)) {
 
@@ -89,9 +86,6 @@ public class RegisterController {
             );
             return;
         }
-
-        // Phone Validation
-
         if (!isValidPhone(phone)) {
 
             AlertUtil.showError(
@@ -100,9 +94,6 @@ public class RegisterController {
             );
             return;
         }
-
-        // Email Validation
-
         if (!isValidEmail(email)) {
 
             AlertUtil.showError(
@@ -111,8 +102,6 @@ public class RegisterController {
             );
             return;
         }
-
-        // Password Validation
 
         if (!isValidPassword(password)) {
 
@@ -133,9 +122,6 @@ public class RegisterController {
             );
             return;
         }
-
-        // Duplicate Email Check
-
         if (emailExists(email)) {
 
             AlertUtil.showError(
@@ -188,10 +174,6 @@ public class RegisterController {
 
     }
 
-    // ==========================================================
-    // Check Duplicate Email
-    // ==========================================================
-
     private boolean emailExists(String email) {
 
         String sql =
@@ -219,10 +201,6 @@ public class RegisterController {
         return false;
 
     }
-
-    // ==========================================================
-    // Insert User
-    // ==========================================================
 
     private boolean insertUser(String name,
                                String email,
@@ -267,10 +245,6 @@ public class RegisterController {
 
     }
 
-    // ==========================================================
-    // Validation Methods
-    // ==========================================================
-
     private boolean isValidName(String name) {
 
         return name.matches("^[A-Z][a-zA-Z ]*$");
@@ -295,9 +269,6 @@ public class RegisterController {
 
     }
 
-    // ==========================================================
-    // Clear Fields
-    // ==========================================================
 
     private void clearFields() {
 
