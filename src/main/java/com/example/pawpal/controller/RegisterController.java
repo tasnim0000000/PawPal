@@ -62,7 +62,7 @@ public class RegisterController {
         String password = txtPassword.getText();
         String confirmPassword = txtConfirmPassword.getText();
         String role = cmbRole.getValue();
-        
+
         if (name.isEmpty() ||
                 phone.isEmpty() ||
                 email.isEmpty() ||
