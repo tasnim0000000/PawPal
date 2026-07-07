@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+fx:controller="com.example.pawpal.controller.EditPetController" prefWidth="900" prefHeight="700">
+<top><HBox style="-fx-background-color:#355E3B;-fx-padding:15;"><children>
+<Label text="✏ Edit Pet" style="-fx-font-size:24;-fx-font-weight:bold;-fx-text-fill:white;"/>
+</children></HBox></top>
+<center><VBox spacing="12"><padding><Insets top="20" right="20" bottom="20" left="20"/></padding><children>
+<Label fx:id="lblPetId" text="Pet ID:"/>
+<TextField fx:id="txtPetName" promptText="Pet Name"/>
+<ComboBox fx:id="cmbSpecies" promptText="Species"/>
+<TextField fx:id="txtBreed" promptText="Breed"/>
+<TextField fx:id="txtAge" promptText="Age"/>
+<ComboBox fx:id="cmbGender" promptText="Gender"/>
+<TextField fx:id="txtPrice" promptText="Price"/>
+<CheckBox fx:id="chkVaccinated" text="Vaccinated"/>
+<TextArea fx:id="txtDescription" prefRowCount="5" promptText="Description"/>
+<TextField fx:id="txtImagePath" promptText="Image Path"/>
+<HBox spacing="10"><children>
+<Button text="Update Pet" onAction="#updatePet"/>
+<Button text="Clear" onAction="#clearForm"/>
+</children></HBox>
+</children></VBox></center>
+</BorderPane>

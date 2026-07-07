@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+fx:controller="com.example.pawpal.controller.AddPetController" prefWidth="900" prefHeight="700">
+<top><HBox alignment="CENTER_LEFT" style="-fx-background-color:#355E3B;-fx-padding:15;"><children>
+<Label text="🐾 Add New Pet" style="-fx-font-size:24;-fx-font-weight:bold;-fx-text-fill:white;"/>
+</children></HBox></top>
+<center><VBox spacing="12" alignment="TOP_CENTER"><padding><Insets top="20" right="20" bottom="20" left="20"/></padding><children>
+<TextField fx:id="txtPetName" promptText="Pet Name"/>
+<ComboBox fx:id="cmbSpecies" promptText="Species"/>
+<TextField fx:id="txtBreed" promptText="Breed"/>
+<TextField fx:id="txtAge" promptText="Age (Months)"/>
+<ComboBox fx:id="cmbGender" promptText="Gender"/>
+<TextField fx:id="txtPrice" promptText="Price (BDT)"/>
+<CheckBox fx:id="chkVaccinated" text="Vaccinated"/>
+<TextArea fx:id="txtDescription" promptText="Description" prefRowCount="5"/>
+<TextField fx:id="txtImagePath" promptText="Image Path (Optional)"/>
+<HBox spacing="15" alignment="CENTER"><children>
+<Button text="Add Pet" onAction="#addPet"/>
+<Button text="Clear" onAction="#clearForm"/>
+</children></HBox>
+</children></VBox></center>
+</BorderPane>

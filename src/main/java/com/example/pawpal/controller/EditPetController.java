@@ -1,16 +1,16 @@
 package com.example.pawpal.controller;
 
+import com.example.pawpal.HelloApplication;
 import com.example.pawpal.database.DatabaseConnection;
-import com.example.pawpal.session.Session;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
-public class AddPetController {
+public class EditPetController {
 
+@FXML private Label lblPetId;
 @FXML private TextField txtPetName;
 @FXML private ComboBox<String> cmbSpecies;
 @FXML private TextField txtBreed;
@@ -21,6 +21,7 @@ public class AddPetController {
 @FXML private TextArea txtDescription;
 @FXML private TextField txtImagePath;
 
+private int petId;
 private final Connection connection=DatabaseConnection.getInstance().getConnection();
 
 @FXML
@@ -29,40 +30,25 @@ cmbSpecies.getItems().addAll("Dog","Cat","Bird","Rabbit","Fish","Other");
 cmbGender.getItems().addAll("Male","Female");
 }
 
-    private int getStoreId() {
-
-        String sql = "SELECT store_id FROM stores WHERE owner_id = ?";
-
-        try {
-
-            PreparedStatement pst = connection.prepareStatement(sql);
-
-            pst.setInt(1, Session.getCurrentUser().getUserId());
-
-            ResultSet rs = pst.executeQuery();
-
-            if (rs.next()) {
-
-                return rs.getInt("store_id");
-
-            }
-
-        } catch (Exception e) {
-
-            e.printStackTrace();
-
-        }
-
-        return -1;
-
-    }
+public void setPetData(int petId,String petName,String species,String breed,int age,String gender,double price,boolean vaccinated,String description,String imagePath){
+this.petId=petId;
+lblPetId.setText("Pet ID: "+petId);
+txtPetName.setText(petName);
+cmbSpecies.setValue(species);
+txtBreed.setText(breed);
+txtAge.setText(String.valueOf(age));
+cmbGender.setValue(gender);
+txtPrice.setText(String.valueOf(price));
+chkVaccinated.setSelected(vaccinated);
+txtDescription.setText(description);
+txtImagePath.setText(imagePath);
+}
 
 @FXML
-private void addPet(ActionEvent e){
-String sql="INSERT INTO pets(pet_name, pet_type, breed, age, gender, price, description, vaccinated, image_path, store_id)\n" +
-        "VALUES(?,?,?,?,?,?,?,?,?,?)";
+private void updatePet(ActionEvent e){
 try{
-PreparedStatement pst=connection.prepareStatement(sql);
+
+PreparedStatement pst=connection.prepareStatement("UPDATE pets SET pet_name=?, pet_type=?, breed=?, age=?, gender=?, price=?, description=?, vaccinated=?, image_path=? WHERE pet_id=?");
 pst.setString(1,txtPetName.getText());
 pst.setString(2,cmbSpecies.getValue());
 pst.setString(3,txtBreed.getText());
@@ -72,22 +58,10 @@ pst.setDouble(6,Double.parseDouble(txtPrice.getText()));
 pst.setString(7,txtDescription.getText());
 pst.setBoolean(8,chkVaccinated.isSelected());
 pst.setString(9,txtImagePath.getText());
-    int storeId = getStoreId();
-
-    if (storeId == -1) {
-
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setHeaderText(null);
-        alert.setContentText("Store not found for this seller.");
-        alert.showAndWait();
-        return;
-
-    }
-
-    pst.setInt(10, storeId);
+pst.setInt(10,petId);
 pst.executeUpdate();
-new Alert(Alert.AlertType.INFORMATION,"Pet Added Successfully!").showAndWait();
-clearForm(null);
+new Alert(Alert.AlertType.INFORMATION,"Pet updated successfully!").showAndWait();
+HelloApplication.changeScene("/fxml/MyPets.fxml");
 }catch(Exception ex){ex.printStackTrace();}
 }
 
