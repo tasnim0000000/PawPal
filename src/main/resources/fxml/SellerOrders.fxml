@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+fx:controller="com.example.pawpal.controller.SellerOrdersController" prefWidth="1150" prefHeight="700">
+<top><HBox spacing="15" alignment="CENTER_LEFT" style="-fx-background-color:#355E3B;-fx-padding:15;"><children>
+<Label text="📦 Orders" style="-fx-font-size:24;-fx-font-weight:bold;-fx-text-fill:white;"/>
+<Pane HBox.hgrow="ALWAYS"/>
+<Button text="Refresh" onAction="#loadOrders"/>
+<Button text="Back" onAction="#goBack"/>
+</children></HBox></top>
+<center><VBox spacing="15" style="-fx-padding:20;"><children>
+<TableView fx:id="tableOrders" prefHeight="550">
+<columns>
+<TableColumn fx:id="colOrderId" text="Order ID" prefWidth="70"/>
+<TableColumn fx:id="colPet" text="Pet" prefWidth="130"/>
+<TableColumn fx:id="colBuyer" text="Buyer" prefWidth="130"/>
+<TableColumn fx:id="colAddress" text="Delivery Address" prefWidth="200"/>
+<TableColumn fx:id="colPhone" text="Phone" prefWidth="120"/>
+<TableColumn fx:id="colPayment" text="Payment" prefWidth="110"/>
+<TableColumn fx:id="colStatus" text="Status" prefWidth="200"/>
+<TableColumn fx:id="colDate" text="Date" prefWidth="100"/>
+</columns>
+</TableView>
+<HBox spacing="15"><children>
+<Button text="Approve Order" onAction="#approveOrder"/>
+<Button text="Reject Order" onAction="#rejectOrder"/>
+</children></HBox>
+</children></VBox></center>
+</BorderPane>

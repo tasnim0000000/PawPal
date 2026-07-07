@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+fx:controller="com.example.pawpal.controller.StoreProfileController" prefWidth="800" prefHeight="700">
+<top><HBox spacing="15" alignment="CENTER_LEFT" style="-fx-background-color:#355E3B;-fx-padding:15;"><children>
+<Label text="🏪 Store Profile" style="-fx-font-size:24;-fx-font-weight:bold;-fx-text-fill:white;"/>
+<Pane HBox.hgrow="ALWAYS"/>
+<Button text="Back" onAction="#goBack"/>
+</children></HBox></top>
+<center><VBox spacing="12" alignment="TOP_CENTER"><padding><Insets top="20" right="20" bottom="20" left="20"/></padding><children>
+
+<Label fx:id="lblStatusBanner" wrapText="true" style="-fx-font-size:14;-fx-text-fill:#355E3B;-fx-font-weight:bold;"/>
+
+<HBox spacing="30" alignment="CENTER"><children>
+<VBox alignment="CENTER"><children><Label text="Approval Status"/><Label fx:id="lblApprovalStatus" style="-fx-font-weight:bold;"/></children></VBox>
+<VBox alignment="CENTER"><children><Label text="Average Rating"/><Label fx:id="lblAverageRating" style="-fx-font-weight:bold;"/></children></VBox>
+</children></HBox>
+
+<TextField fx:id="txtStoreName" promptText="Store Name"/>
+<TextField fx:id="txtAddress" promptText="Address"/>
+<TextField fx:id="txtPhone" promptText="Store Phone"/>
+<TextArea fx:id="txtDescription" promptText="Store Description" prefRowCount="4"/>
+<TextField fx:id="txtLogoPath" promptText="Logo Image Path (Optional)"/>
+
+<Button fx:id="btnSave" text="Save" onAction="#saveStore"/>
+
+</children></VBox></center>
+</BorderPane>

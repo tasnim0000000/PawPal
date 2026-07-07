@@ -45,7 +45,7 @@ return rs.next()?rs.getInt("store_id"):-1;
 public void loadPets(ActionEvent e){
 ObservableList<ObservableList<String>> data=FXCollections.observableArrayList();
 try{
-PreparedStatement pst=connection.prepareStatement("SELECT pet_id,pet_name,species,breed,price,adoption_status FROM pets WHERE store_id=?");
+PreparedStatement pst=connection.prepareStatement("SELECT pet_id,pet_name,pet_type,breed,price,availability_status FROM pets WHERE store_id=?");
 pst.setInt(1,getStoreId());
 ResultSet rs=pst.executeQuery();
 while(rs.next()){

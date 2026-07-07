@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+fx:controller="com.example.pawpal.controller.AdminUsersController" prefWidth="1050" prefHeight="700">
+<top><HBox spacing="15" alignment="CENTER_LEFT" style="-fx-background-color:#355E3B;-fx-padding:15;"><children>
+<Label text="👥 Manage Users" style="-fx-font-size:24;-fx-font-weight:bold;-fx-text-fill:white;"/>
+<Pane HBox.hgrow="ALWAYS"/>
+<Button text="Refresh" onAction="#loadUsers"/>
+<Button text="Back" onAction="#goBack"/>
+</children></HBox></top>
+<center><VBox spacing="15" style="-fx-padding:20;"><children>
+<HBox spacing="15" alignment="CENTER_LEFT"><children>
+<Label text="Filter by Role:"/>
+<ComboBox fx:id="cmbRoleFilter" onAction="#loadUsers"/>
+</children></HBox>
+<TableView fx:id="tableUsers" prefHeight="500">
+<columns>
+<TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+<TableColumn fx:id="colName" text="Full Name" prefWidth="170"/>
+<TableColumn fx:id="colEmail" text="Email" prefWidth="200"/>
+<TableColumn fx:id="colPhone" text="Phone" prefWidth="130"/>
+<TableColumn fx:id="colRole" text="Role" prefWidth="120"/>
+<TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+</columns>
+</TableView>
+<HBox spacing="15"><children>
+<Button text="Block User" onAction="#blockUser" style="-fx-background-color:#B33A3A;-fx-text-fill:white;"/>
+<Button text="Unblock User" onAction="#unblockUser" style="-fx-background-color:#5C7C4F;-fx-text-fill:white;"/>
+<Button text="Delete User" onAction="#deleteUser" style="-fx-background-color:#8B0000;-fx-text-fill:white;"/>
+</children></HBox>
+</children></VBox></center>
+</BorderPane>

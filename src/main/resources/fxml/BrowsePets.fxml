@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+fx:controller="com.example.pawpal.controller.BrowsePetsController" prefWidth="1100" prefHeight="700">
+<top><HBox spacing="15" alignment="CENTER_LEFT" style="-fx-background-color:#355E3B;-fx-padding:15;"><children>
+<Label text="🐾 Browse Pets" style="-fx-font-size:24;-fx-font-weight:bold;-fx-text-fill:white;"/>
+<Pane HBox.hgrow="ALWAYS"/>
+<Button text="Back" onAction="#goBack"/>
+</children></HBox></top>
+<center><VBox spacing="15" style="-fx-padding:20;"><children>
+<HBox spacing="15" alignment="CENTER_LEFT"><children>
+<TextField fx:id="txtSearch" promptText="Search by pet name" prefWidth="260"/>
+<ComboBox fx:id="cmbTypeFilter" promptText="Type"/>
+<Button text="Search" onAction="#loadPets"/>
+</children></HBox>
+<TableView fx:id="tablePets" prefHeight="500">
+<columns>
+<TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+<TableColumn fx:id="colName" text="Name" prefWidth="130"/>
+<TableColumn fx:id="colType" text="Type" prefWidth="90"/>
+<TableColumn fx:id="colBreed" text="Breed" prefWidth="120"/>
+<TableColumn fx:id="colAge" text="Age" prefWidth="70"/>
+<TableColumn fx:id="colGender" text="Gender" prefWidth="90"/>
+<TableColumn fx:id="colPrice" text="Price (BDT)" prefWidth="110"/>
+<TableColumn fx:id="colStore" text="Store" prefWidth="160"/>
+<TableColumn fx:id="colRating" text="Store Rating" prefWidth="100"/>
+</columns>
+</TableView>
+<HBox spacing="15"><children>
+<Button text="View Details" onAction="#viewDetails"/>
+</children></HBox>
+</children></VBox></center>
+</BorderPane>

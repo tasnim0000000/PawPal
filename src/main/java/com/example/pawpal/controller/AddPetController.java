@@ -31,7 +31,7 @@ cmbGender.getItems().addAll("Male","Female");
 
     private int getStoreId() {
 
-        String sql = "SELECT store_id FROM stores WHERE owner_id = ?";
+        String sql = "SELECT store_id FROM stores WHERE owner_id = ? AND approval_status = 'APPROVED'";
 
         try {
 
@@ -78,7 +78,7 @@ pst.setString(9,txtImagePath.getText());
 
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setHeaderText(null);
-        alert.setContentText("Store not found for this seller.");
+        alert.setContentText("You need an admin-approved store before you can add pets. Please set up your store profile and wait for approval.");
         alert.showAndWait();
         return;
 

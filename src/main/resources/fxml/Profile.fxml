@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+fx:controller="com.example.pawpal.controller.ProfileController" prefWidth="700" prefHeight="650">
+<top><HBox spacing="15" alignment="CENTER_LEFT" style="-fx-background-color:#355E3B;-fx-padding:15;"><children>
+<Label text="👤 My Profile" style="-fx-font-size:24;-fx-font-weight:bold;-fx-text-fill:white;"/>
+<Pane HBox.hgrow="ALWAYS"/>
+<Button text="Back" onAction="#goBack"/>
+</children></HBox></top>
+<center><VBox spacing="15" alignment="TOP_CENTER"><padding><Insets top="30" right="30" bottom="30" left="30"/></padding><children>
+
+<TitledPane text="Account Information" collapsible="false" maxWidth="500">
+<content>
+<VBox spacing="10"><children>
+<HBox spacing="10"><children><Label text="Email:" style="-fx-font-weight:bold;"/><Label fx:id="lblEmail"/></children></HBox>
+<HBox spacing="10"><children><Label text="Role:" style="-fx-font-weight:bold;"/><Label fx:id="lblRole"/></children></HBox>
+<TextField fx:id="txtFullName" promptText="Full Name"/>
+<TextField fx:id="txtPhone" promptText="Phone"/>
+<Button text="Save Changes" onAction="#saveProfile"/>
+</children></VBox>
+</content>
+</TitledPane>
+
+<TitledPane text="Change Password" collapsible="false" maxWidth="500">
+<content>
+<VBox spacing="10"><children>
+<PasswordField fx:id="txtCurrentPassword" promptText="Current Password"/>
+<PasswordField fx:id="txtNewPassword" promptText="New Password"/>
+<PasswordField fx:id="txtConfirmPassword" promptText="Confirm New Password"/>
+<Button text="Change Password" onAction="#changePassword"/>
+</children></VBox>
+</content>
+</TitledPane>
+
+</children></VBox></center>
+</BorderPane>

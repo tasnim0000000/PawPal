@@ -49,22 +49,7 @@
                     </VBox>
                 </HBox>
                 <Label text="Featured Pets" style="-fx-font-size:22;-fx-font-weight:bold;"/>
-                <FlowPane hgap="20" vgap="20">
-                    <children>
-                        <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
-                            <children><Label text="🐶"/><Label text="Golden Retriever"/><Button text="View Details"/></children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
-                            <children><Label text="🐱"/><Label text="Persian Cat"/><Button text="View Details"/></children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
-                            <children><Label text="🐦"/><Label text="Cockatiel"/><Button text="View Details"/></children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
-                            <children><Label text="🐰"/><Label text="Rabbit"/><Button text="View Details"/></children>
-                        </VBox>
-                    </children>
-                </FlowPane>
+                <FlowPane fx:id="flowFeaturedPets" hgap="20" vgap="20"/>
             </children>
         </VBox>
     </center>

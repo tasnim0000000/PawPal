@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+fx:controller="com.example.pawpal.controller.AdminStoresController" prefWidth="1200" prefHeight="700">
+<top><HBox spacing="15" alignment="CENTER_LEFT" style="-fx-background-color:#355E3B;-fx-padding:15;"><children>
+<Label text="🏪 Manage Stores" style="-fx-font-size:24;-fx-font-weight:bold;-fx-text-fill:white;"/>
+<Pane HBox.hgrow="ALWAYS"/>
+<Button text="Refresh" onAction="#loadStores"/>
+<Button text="Back" onAction="#goBack"/>
+</children></HBox></top>
+<center><VBox spacing="15" style="-fx-padding:20;"><children>
+<TableView fx:id="tableStores" prefHeight="550">
+<columns>
+<TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+<TableColumn fx:id="colName" text="Store Name" prefWidth="160"/>
+<TableColumn fx:id="colOwner" text="Owner" prefWidth="140"/>
+<TableColumn fx:id="colEmail" text="Email" prefWidth="170"/>
+<TableColumn fx:id="colAddress" text="Address" prefWidth="180"/>
+<TableColumn fx:id="colPhone" text="Phone" prefWidth="120"/>
+<TableColumn fx:id="colRating" text="Rating" prefWidth="70"/>
+<TableColumn fx:id="colStatus" text="Status" prefWidth="110"/>
+</columns>
+</TableView>
+<HBox spacing="15"><children>
+<Button text="Approve Store" onAction="#approveStore" style="-fx-background-color:#5C7C4F;-fx-text-fill:white;"/>
+<Button text="Reject Store" onAction="#rejectStore" style="-fx-background-color:#B33A3A;-fx-text-fill:white;"/>
+</children></HBox>
+</children></VBox></center>
+</BorderPane>

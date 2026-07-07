@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+fx:controller="com.example.pawpal.controller.PetDetailsController" prefWidth="1000" prefHeight="750">
+<top><HBox spacing="15" alignment="CENTER_LEFT" style="-fx-background-color:#355E3B;-fx-padding:15;"><children>
+<Label text="🐾 Pet Details" style="-fx-font-size:24;-fx-font-weight:bold;-fx-text-fill:white;"/>
+<Pane HBox.hgrow="ALWAYS"/>
+<Button text="Back to Browse" onAction="#goBack"/>
+</children></HBox></top>
+<center>
+<ScrollPane fitToWidth="true">
+<content>
+<VBox spacing="18" style="-fx-padding:20;">
+<children>
+
+    <TitledPane text="Pet Information" collapsible="false">
+    <content>
+    <GridPane hgap="15" vgap="8">
+    <children>
+        <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight:bold;"/>
+        <Label fx:id="lblPetName" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label text="Type:" GridPane.rowIndex="0" GridPane.columnIndex="2" style="-fx-font-weight:bold;"/>
+        <Label fx:id="lblType" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Breed:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight:bold;"/>
+        <Label fx:id="lblBreed" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Label text="Age:" GridPane.rowIndex="1" GridPane.columnIndex="2" style="-fx-font-weight:bold;"/>
+        <Label fx:id="lblAge" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="Gender:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight:bold;"/>
+        <Label fx:id="lblGender" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label text="Vaccinated:" GridPane.rowIndex="2" GridPane.columnIndex="2" style="-fx-font-weight:bold;"/>
+        <Label fx:id="lblVaccinated" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+
+        <Label text="Price:" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-font-weight:bold;"/>
+        <Label fx:id="lblPrice" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <Label text="Status:" GridPane.rowIndex="3" GridPane.columnIndex="2" style="-fx-font-weight:bold;"/>
+        <Label fx:id="lblStatus" GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+
+        <Label text="Store:" GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-font-weight:bold;"/>
+        <Label fx:id="lblStore" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        <Label text="Store Rating:" GridPane.rowIndex="4" GridPane.columnIndex="2" style="-fx-font-weight:bold;"/>
+        <Label fx:id="lblStoreRating" GridPane.rowIndex="4" GridPane.columnIndex="3"/>
+    </children>
+    </GridPane>
+    </content>
+    </TitledPane>
+
+    <TitledPane text="Description" collapsible="false">
+    <content>
+    <TextArea fx:id="txtDescriptionView" prefRowCount="3" editable="false" wrapText="true"/>
+    </content>
+    </TitledPane>
+
+    <TitledPane text="Order This Pet" collapsible="false">
+    <content>
+    <VBox spacing="10">
+    <children>
+        <TextField fx:id="txtDeliveryAddress" promptText="Delivery Address"/>
+        <TextField fx:id="txtContactPhone" promptText="Contact Phone (+8801XXXXXXXXX)"/>
+        <ComboBox fx:id="cmbPaymentMethod" promptText="Payment Method"/>
+        <Button fx:id="btnPlaceOrder" text="Place Order" onAction="#placeOrder"/>
+    </children>
+    </VBox>
+    </content>
+    </TitledPane>
+
+    <TitledPane text="Report This Listing" collapsible="false">
+    <content>
+    <VBox spacing="10">
+    <children>
+        <TextArea fx:id="txtReportReason" promptText="Describe the issue with this listing" prefRowCount="3"/>
+        <Button fx:id="btnReportPet" text="Report Pet" onAction="#reportPet" style="-fx-background-color:#B33A3A;-fx-text-fill:white;"/>
+    </children>
+    </VBox>
+    </content>
+    </TitledPane>
+
+    <TitledPane text="Comments" collapsible="false">
+    <content>
+    <VBox spacing="10">
+    <children>
+        <ListView fx:id="listComments" prefHeight="160"/>
+        <TextArea fx:id="txtNewComment" promptText="Write a comment..." prefRowCount="2"/>
+        <Button text="Post Comment" onAction="#postComment"/>
+    </children>
+    </VBox>
+    </content>
+    </TitledPane>
+
+    <VBox fx:id="reviewBox" spacing="10">
+    <children>
+        <Label text="Leave a Review" style="-fx-font-size:18;-fx-font-weight:bold;"/>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+        <children>
+            <Label text="Rating:"/>
+            <ComboBox fx:id="cmbRatingValue" promptText="1-5"/>
+        </children>
+        </HBox>
+        <TextArea fx:id="txtReviewText" promptText="Share your experience..." prefRowCount="3"/>
+        <Button fx:id="btnSubmitReview" text="Submit Review" onAction="#submitReview"/>
+    </children>
+    </VBox>
+
+    <TitledPane text="Reviews for this Pet" collapsible="false">
+    <content>
+    <ListView fx:id="listReviews" prefHeight="160"/>
+    </content>
+    </TitledPane>
+
+</children>
+</VBox>
+</content>
+</ScrollPane>
+</center>
+</BorderPane>

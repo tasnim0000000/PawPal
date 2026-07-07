@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+fx:controller="com.example.pawpal.controller.AdminPetsController" prefWidth="1050" prefHeight="700">
+<top><HBox spacing="15" alignment="CENTER_LEFT" style="-fx-background-color:#355E3B;-fx-padding:15;"><children>
+<Label text="🐶 Manage Pets" style="-fx-font-size:24;-fx-font-weight:bold;-fx-text-fill:white;"/>
+<Pane HBox.hgrow="ALWAYS"/>
+<Button text="Refresh" onAction="#loadPets"/>
+<Button text="Back" onAction="#goBack"/>
+</children></HBox></top>
+<center><VBox spacing="15" style="-fx-padding:20;"><children>
+<TableView fx:id="tablePets" prefHeight="550">
+<columns>
+<TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+<TableColumn fx:id="colName" text="Pet Name" prefWidth="160"/>
+<TableColumn fx:id="colType" text="Type" prefWidth="100"/>
+<TableColumn fx:id="colStore" text="Store" prefWidth="180"/>
+<TableColumn fx:id="colPrice" text="Price (BDT)" prefWidth="120"/>
+<TableColumn fx:id="colStatus" text="Status" prefWidth="130"/>
+</columns>
+</TableView>
+<HBox spacing="15"><children>
+<Button text="Delete Selected Pet" onAction="#deletePet" style="-fx-background-color:#B33A3A;-fx-text-fill:white;"/>
+</children></HBox>
+</children></VBox></center>
+</BorderPane>

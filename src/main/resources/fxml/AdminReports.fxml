@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+fx:controller="com.example.pawpal.controller.AdminReportsController" prefWidth="1150" prefHeight="750">
+<top><HBox spacing="15" alignment="CENTER_LEFT" style="-fx-background-color:#355E3B;-fx-padding:15;"><children>
+<Label text="⚠ Reports" style="-fx-font-size:24;-fx-font-weight:bold;-fx-text-fill:white;"/>
+<Pane HBox.hgrow="ALWAYS"/>
+<Button text="Refresh" onAction="#loadReports"/>
+<Button text="Back" onAction="#goBack"/>
+</children></HBox></top>
+<center><VBox spacing="15" style="-fx-padding:20;"><children>
+<TableView fx:id="tableReports" prefHeight="450">
+<columns>
+<TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+<TableColumn fx:id="colPet" text="Pet" prefWidth="140"/>
+<TableColumn fx:id="colReporter" text="Reported By" prefWidth="140"/>
+<TableColumn fx:id="colReason" text="Reason" prefWidth="330"/>
+<TableColumn fx:id="colStatus" text="Status" prefWidth="110"/>
+<TableColumn fx:id="colDate" text="Date" prefWidth="100"/>
+</columns>
+</TableView>
+<Label text="Admin Note" style="-fx-font-weight:bold;"/>
+<TextArea fx:id="txtAdminNote" prefRowCount="3" promptText="Add a note about the action taken..."/>
+<HBox spacing="15"><children>
+<Button text="Mark Reviewed" onAction="#markReviewed"/>
+<Button text="Resolve" onAction="#resolveReport" style="-fx-background-color:#5C7C4F;-fx-text-fill:white;"/>
+<Button text="Delete Reported Pet" onAction="#deleteReportedPet" style="-fx-background-color:#B33A3A;-fx-text-fill:white;"/>
+<Button text="Block Store Owner" onAction="#blockReportedStoreOwner" style="-fx-background-color:#8B4513;-fx-text-fill:white;"/>
+</children></HBox>
+</children></VBox></center>
+</BorderPane>

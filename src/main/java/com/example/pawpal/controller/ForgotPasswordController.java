@@ -1,11 +1,16 @@
 package com.example.pawpal.controller;
 
 import com.example.pawpal.HelloApplication;
+import com.example.pawpal.database.DatabaseConnection;
 import com.example.pawpal.util.AlertUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class ForgotPasswordController {
 
@@ -18,8 +23,11 @@ public class ForgotPasswordController {
     @FXML
     private PasswordField txtConfirmPassword;
 
+    private final Connection connection =
+            DatabaseConnection.getInstance().getConnection();
+
     @FXML
-    private void resetPassword(ActionEvent event){
+    private void resetPassword(ActionEvent event) {
 
         String email = txtEmail.getText().trim();
         String newPassword = txtNewPassword.getText();
@@ -71,14 +79,49 @@ public class ForgotPasswordController {
 
         }
 
-        System.out.println("===== RESET PASSWORD =====");
-        System.out.println(email);
-        System.out.println(newPassword);
+        try {
 
-        AlertUtil.showInformation(
-                "Reset Password",
-                "Database logic will be added next."
-        );
+            PreparedStatement check = connection.prepareStatement(
+                    "SELECT user_id FROM users WHERE email=?");
+            check.setString(1, email);
+            ResultSet rs = check.executeQuery();
+
+            if (!rs.next()) {
+
+                AlertUtil.showError(
+                        "Account Not Found",
+                        "No account is registered with this email address."
+                );
+                return;
+            }
+
+            PreparedStatement update = connection.prepareStatement(
+                    "UPDATE users SET password=? WHERE email=?");
+            update.setString(1, newPassword);
+            update.setString(2, email);
+            update.executeUpdate();
+
+            AlertUtil.showInformation(
+                    "Password Reset",
+                    "Your password has been reset successfully. You can now log in."
+            );
+
+            txtEmail.clear();
+            txtNewPassword.clear();
+            txtConfirmPassword.clear();
+
+            HelloApplication.changeScene("/fxml/Login.fxml");
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+            AlertUtil.showError(
+                    "Database Error",
+                    "Something went wrong while resetting your password."
+            );
+
+        }
 
     }
 
