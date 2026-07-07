@@ -5,13 +5,9 @@ import java.time.LocalDateTime;
 public class User {
 
     private int userId;
-
     private String fullName;
-
     private String email;
-
     private String password;
-
     private String phone;
 
     private String role;
