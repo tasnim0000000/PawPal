@@ -1,56 +1,316 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
-fx:controller="com.example.pawpal.controller.AdminStatisticsController" prefWidth="1000" prefHeight="700">
-<top><HBox spacing="15" alignment="CENTER_LEFT" style="-fx-background-color:#355E3B;-fx-padding:15;"><children>
-<Label text="📊 Statistics" style="-fx-font-size:24;-fx-font-weight:bold;-fx-text-fill:white;"/>
-<Pane HBox.hgrow="ALWAYS"/>
-<Button text="Refresh" onAction="#refresh"/>
-<Button text="Back" onAction="#goBack"/>
-</children></HBox></top>
-<center><VBox spacing="20" style="-fx-padding:20;"><children>
 
-<TitledPane text="Users" collapsible="false"><content>
-<HBox spacing="20"><children>
-<VBox alignment="CENTER" prefWidth="150" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Total"/><Label fx:id="lblTotalUsers" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-<VBox alignment="CENTER" prefWidth="150" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Buyers"/><Label fx:id="lblTotalBuyers" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-<VBox alignment="CENTER" prefWidth="150" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Store Owners"/><Label fx:id="lblTotalStoreOwners" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-<VBox alignment="CENTER" prefWidth="150" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Blocked"/><Label fx:id="lblBlockedUsers" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-</children></HBox>
-</content></TitledPane>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.pawpal.controller.AdminStatisticsController"
+            prefWidth="1000"
+            prefHeight="700">
 
-<TitledPane text="Stores" collapsible="false"><content>
-<HBox spacing="20"><children>
-<VBox alignment="CENTER" prefWidth="150" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Total"/><Label fx:id="lblTotalStores" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-<VBox alignment="CENTER" prefWidth="150" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Approved"/><Label fx:id="lblApprovedStores" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-<VBox alignment="CENTER" prefWidth="150" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Pending"/><Label fx:id="lblPendingStores" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-</children></HBox>
-</content></TitledPane>
+    <!-- ================= TOP ================= -->
 
-<TitledPane text="Pets" collapsible="false"><content>
-<HBox spacing="20"><children>
-<VBox alignment="CENTER" prefWidth="150" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Total"/><Label fx:id="lblTotalPets" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-<VBox alignment="CENTER" prefWidth="150" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Available"/><Label fx:id="lblAvailablePets" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-<VBox alignment="CENTER" prefWidth="150" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Sold"/><Label fx:id="lblSoldPets" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-</children></HBox>
-</content></TitledPane>
+    <top>
+        <HBox spacing="15"
+              alignment="CENTER_LEFT"
+              style="-fx-background-color:#355E3B; -fx-padding:15;">
 
-<TitledPane text="Orders &amp; Revenue" collapsible="false"><content>
-<HBox spacing="20"><children>
-<VBox alignment="CENTER" prefWidth="150" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Total"/><Label fx:id="lblTotalOrders" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-<VBox alignment="CENTER" prefWidth="150" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Completed"/><Label fx:id="lblCompletedOrders" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-<VBox alignment="CENTER" prefWidth="150" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Pending"/><Label fx:id="lblPendingOrders" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-<VBox alignment="CENTER" prefWidth="200" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Total Revenue"/><Label fx:id="lblTotalRevenue" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-</children></HBox>
-</content></TitledPane>
+            <children>
 
-<TitledPane text="Reports" collapsible="false"><content>
-<HBox spacing="20"><children>
-<VBox alignment="CENTER" prefWidth="150" style="-fx-background-color:white;-fx-padding:15;"><children><Label text="Pending Reports"/><Label fx:id="lblPendingReports" style="-fx-font-size:22;-fx-font-weight:bold;"/></children></VBox>
-</children></HBox>
-</content></TitledPane>
+                <Label text="📊 Statistics"
+                       style="-fx-font-size:24;
+                              -fx-font-weight:bold;
+                              -fx-text-fill:white;"/>
 
-</children></VBox></center>
+                <Pane HBox.hgrow="ALWAYS"/>
+
+                <Button text="Refresh"
+                        onAction="#refresh"/>
+
+                <Button text="Back"
+                        onAction="#goBack"/>
+
+            </children>
+
+        </HBox>
+    </top>
+
+    <!-- ================= CENTER ================= -->
+
+    <center>
+
+        <ScrollPane fitToWidth="true"
+                    pannable="true"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="AS_NEEDED">
+
+            <content>
+
+                <VBox spacing="20"
+                      style="-fx-padding:20;">
+
+                    <children>
+
+                        <!-- ================= USERS ================= -->
+
+                        <TitledPane text="Users"
+                                    collapsible="false">
+
+                            <content>
+
+                                <HBox spacing="20">
+
+                                    <children>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="150"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+                                            <children>
+                                                <Label text="Total"/>
+                                                <Label fx:id="lblTotalUsers"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="150"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+                                            <children>
+                                                <Label text="Buyers"/>
+                                                <Label fx:id="lblTotalBuyers"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="150"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+                                            <children>
+                                                <Label text="Store Owners"/>
+                                                <Label fx:id="lblTotalStoreOwners"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="150"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+                                            <children>
+                                                <Label text="Blocked"/>
+                                                <Label fx:id="lblBlockedUsers"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                                            </children>
+                                        </VBox>
+
+                                    </children>
+
+                                </HBox>
+
+                            </content>
+
+                        </TitledPane>
+
+                        <!-- ================= STORES ================= -->
+
+                        <TitledPane text="Stores"
+                                    collapsible="false">
+
+                            <content>
+
+                                <HBox spacing="20">
+
+                                    <children>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="150"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+                                            <children>
+                                                <Label text="Total"/>
+                                                <Label fx:id="lblTotalStores"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="150"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+                                            <children>
+                                                <Label text="Approved"/>
+                                                <Label fx:id="lblApprovedStores"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="150"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+                                            <children>
+                                                <Label text="Pending"/>
+                                                <Label fx:id="lblPendingStores"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                                            </children>
+                                        </VBox>
+
+                                    </children>
+
+                                </HBox>
+
+                            </content>
+
+                        </TitledPane>
+
+                        <!-- ================= PETS ================= -->
+
+                        <TitledPane text="Pets"
+                                    collapsible="false">
+
+                            <content>
+
+                                <HBox spacing="20">
+
+                                    <children>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="150"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+                                            <children>
+                                                <Label text="Total"/>
+                                                <Label fx:id="lblTotalPets"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="150"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+                                            <children>
+                                                <Label text="Available"/>
+                                                <Label fx:id="lblAvailablePets"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="150"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+                                            <children>
+                                                <Label text="Sold"/>
+                                                <Label fx:id="lblSoldPets"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                                            </children>
+                                        </VBox>
+
+                                    </children>
+
+                                </HBox>
+
+                            </content>
+
+                        </TitledPane>
+
+                        <!-- ================= ORDERS ================= -->
+
+                        <TitledPane text="Orders &amp; Revenue"
+                                    collapsible="false">
+
+                            <content>
+
+                                <HBox spacing="20">
+
+                                    <children>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="150"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+                                            <children>
+                                                <Label text="Total"/>
+                                                <Label fx:id="lblTotalOrders"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="150"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+                                            <children>
+                                                <Label text="Completed"/>
+                                                <Label fx:id="lblCompletedOrders"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="150"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+                                            <children>
+                                                <Label text="Pending"/>
+                                                <Label fx:id="lblPendingOrders"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="200"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+                                            <children>
+                                                <Label text="Total Revenue"/>
+                                                <Label fx:id="lblTotalRevenue"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                                            </children>
+                                        </VBox>
+
+                                    </children>
+
+                                </HBox>
+
+                            </content>
+
+                        </TitledPane>
+
+                        <!-- ================= REPORTS ================= -->
+
+                        <TitledPane text="Reports"
+                                    collapsible="false">
+
+                            <content>
+
+                                <HBox spacing="20">
+
+                                    <children>
+
+                                        <VBox alignment="CENTER"
+                                              prefWidth="180"
+                                              style="-fx-background-color:white;-fx-padding:15;">
+
+                                            <children>
+
+                                                <Label text="Pending Reports"/>
+
+                                                <Label fx:id="lblPendingReports"
+                                                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+
+                                            </children>
+
+                                        </VBox>
+
+                                    </children>
+
+                                </HBox>
+
+                            </content>
+
+                        </TitledPane>
+
+                    </children>
+
+                </VBox>
+
+            </content>
+
+        </ScrollPane>
+
+    </center>
+
 </BorderPane>

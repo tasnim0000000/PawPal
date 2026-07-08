@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="800.0"
-            prefWidth="1400.0"
-            xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.pawpal.controller.RegisterController">
+<AnchorPane prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pawpal.controller.RegisterController">
 
     <children>
 
@@ -16,44 +23,24 @@
 
             <!-- LEFT PANEL -->
 
-            <VBox prefWidth="400"
-                  alignment="CENTER"
-                  spacing="20"
-                  style="-fx-background-color:#F7EAD9;">
+            <VBox alignment="CENTER" prefWidth="400" spacing="20" style="-fx-background-color:#F7EAD9;">
 
                 <children>
 
-                    <Label text="🐾 PawPal"
-                           style="-fx-font-size:36;
-                                  -fx-font-weight:bold;
-                                  -fx-text-fill:#355E3B;"/>
+                    <Label style="-fx-font-size:36;                                   -fx-font-weight:bold;                                   -fx-text-fill:#355E3B;" text="🐾 PawPal" />
 
-                    <Label text="Create your own pet family."
-                           style="-fx-font-size:18;
-                                  -fx-text-fill:#555555;"/>
+                    <Label style="-fx-font-size:18;                                   -fx-text-fill:#555555;" text="Create your own pet family." />
 
-                    <Label text="Every Pet Deserves&#10;A Loving Home ❤️"
-                           style="-fx-font-size:28;
-                                  -fx-font-weight:bold;
-                                  -fx-text-alignment:center;
-                                  -fx-text-fill:#355E3B;"/>
+                    <Label style="-fx-font-size:28;                                   -fx-font-weight:bold;                                   -fx-text-alignment:center;                                   -fx-text-fill:#355E3B;" text="Every Pet Deserves&#10;A Loving Home ❤" />
 
-                    <Pane prefHeight="320"
-                          prefWidth="320"
-                          style="-fx-background-color:white;
-                                 -fx-border-color:#CFCFCF;
-                                 -fx-border-radius:10;
-                                 -fx-background-radius:10;">
-
-                        <children>
-
-                            <Label layoutX="70"
-                                   layoutY="145"
-                                   text="Pet Illustration Here"
-                                   style="-fx-font-size:18;
-                                          -fx-text-fill:gray;"/>
-
-                        </children>
+                    <Pane prefHeight="318.0" prefWidth="433.0" style="-fx-background-color:white;                                  -fx-border-color:#CFCFCF;                                  -fx-border-radius:10;                                  -fx-background-radius:10;">
+                  <children>
+                     <ImageView fitHeight="267.0" fitWidth="344.0" layoutX="66.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../images/img_1.png" />
+                        </image>
+                     </ImageView>
+                  </children>
 
                     </Pane>
 
@@ -63,64 +50,44 @@
 
             <!-- RIGHT PANEL -->
 
-            <StackPane prefWidth="500"
-                       style="-fx-background-color:white;">
+            <StackPane prefHeight="800.0" prefWidth="537.0" style="-fx-background-color:white;">
 
                 <children>
 
-                    <VBox alignment="CENTER"
-                          spacing="15"
-                          maxWidth="420">
+                    <VBox alignment="CENTER" maxWidth="420" spacing="15">
 
                         <children>
 
-                            <Label text="Create Account"
-                                   style="-fx-font-size:30;
-                                          -fx-font-weight:bold;"/>
+                            <Label style="-fx-font-size:30;                                           -fx-font-weight:bold;" text="Create Account" />
+                     <Label text="Full Name : " />
 
-                            <TextField fx:id="txtName"
-                                       promptText="Full Name"
-                                       prefWidth="320"/>
+                            <TextField fx:id="txtName" prefWidth="320" promptText="Full Name" />
+                     <Label text="Contact Number:" />
 
-                            <TextField fx:id="txtPhone"
-                                       promptText="+8801XXXXXXXXX"
-                                       prefWidth="320"/>
+                            <TextField fx:id="txtPhone" prefWidth="320" promptText="+8801XXXXXXXXX" />
+                     <Label text="Email Address:" />
 
-                            <TextField fx:id="txtEmail"
-                                       promptText="Email Address"
-                                       prefWidth="320"/>
+                            <TextField fx:id="txtEmail" prefWidth="320" promptText="Email Address" />
+                     <Label text="Password:" />
 
-                            <PasswordField fx:id="txtPassword"
-                                           promptText="Password"
-                                           prefWidth="320"/>
+                            <PasswordField fx:id="txtPassword" prefWidth="320" promptText="Password" />
+                     <Label text="Confirm Password:" />
 
-                            <PasswordField fx:id="txtConfirmPassword"
-                                           promptText="Confirm Password"
-                                           prefWidth="320"/>
+                            <PasswordField fx:id="txtConfirmPassword" prefWidth="320" promptText="Confirm Password" />
 
-                            <ComboBox fx:id="cmbRole"
-                                      promptText="Select Role"
-                                      prefWidth="320"/>
+                            <ComboBox fx:id="cmbRole" prefWidth="320" promptText="Select Role" />
 
-                            <Button fx:id="btnRegister"
-                                    text="Create Account"
-                                    prefWidth="320"
-                                    onAction="#register"
-                                    style="-fx-background-color:#5C7C4F;
-                                           -fx-text-fill:white;
-                                           -fx-font-size:15;
-                                           -fx-font-weight:bold;"/>
+                            <Button fx:id="btnRegister" onAction="#register" prefWidth="320" style="-fx-background-color:#5C7C4F;                                            -fx-text-fill:white;                                            -fx-font-size:15;                                            -fx-font-weight:bold;" text="Create Account" />
 
-                            <Separator prefWidth="320"/>
+                            <Separator prefWidth="320" />
 
                             <HBox alignment="CENTER" spacing="5">
 
                                 <children>
 
-                                    <Label text="Already have an account?"/>
+                                    <Label text="Already have an account?" />
 
-                                    <Hyperlink text="Login"
-                                               onAction="#backToLogin"/>
+                                    <Hyperlink onAction="#backToLogin" text="Login" />
 
                                 </children>
 

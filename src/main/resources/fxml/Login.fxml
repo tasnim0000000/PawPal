@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0"
-            xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.pawpal.controller.LoginController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pawpal.controller.LoginController">
 
     <children>
 
         <HBox prefHeight="600.0" prefWidth="900.0">
 
             <!-- Left Side -->
-            <VBox alignment="CENTER"
-                  prefWidth="450"
-                  spacing="20"
-                  style="-fx-background-color:#F7EAD9;">
+            <VBox alignment="CENTER" prefWidth="450" spacing="20" style="-fx-background-color:#F7EAD9;">
 
                 <children>
+               <ImageView fitHeight="137.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../images/img.png" />
+                  </image>
+               </ImageView>
 
-                    <Label text="🐾 PawPal"
-                           style="-fx-font-size:34px;
-                                  -fx-font-weight:bold;
-                                  -fx-text-fill:#355E3B;" />
+                    <Label style="-fx-font-size:34px;                                   -fx-font-weight:bold;                                   -fx-text-fill:#355E3B;" text="🐾 PawPal" />
 
-                    <Label text="Pet Marketplace &amp; Adoption"
-                           style="-fx-font-size:18px;
-                                  -fx-text-fill:#666666;" />
+                    <Label style="-fx-font-size:18px;                                   -fx-text-fill:#666666;" text="Pet Marketplace &amp; Adoption" />
 
-                    <Label text="Every Pet Deserves&#10;A Loving Home ❤️"
-                           style="-fx-font-size:24px;
-                                  -fx-font-weight:bold;
-                                  -fx-text-alignment:center;
-                                  -fx-text-fill:#355E3B;" />
+                    <Label style="-fx-font-size:24px;                                   -fx-font-weight:bold;                                   -fx-text-alignment:center;                                   -fx-text-fill:#355E3B;" text="Every Pet Deserves&#10;A Loving Home " />
 
                 </children>
 
@@ -42,54 +41,32 @@
 
             <!-- Right Side -->
 
-            <VBox alignment="CENTER"
-                  prefWidth="450"
-                  spacing="15"
-                  style="-fx-background-color:white;">
+            <VBox alignment="CENTER" prefWidth="450" spacing="15" style="-fx-background-color:white;">
 
                 <children>
 
-                    <Label text="Welcome Back"
-                           style="-fx-font-size:28px;
-                                  -fx-font-weight:bold;" />
+                    <Label style="-fx-font-size:28px;                                   -fx-font-weight:bold;" text="Welcome Back" />
+               <Label text="Email Address:" />
 
-                    <TextField fx:id="txtEmail"
-                               promptText="Email Address"
-                               prefWidth="280"/>
+                    <TextField fx:id="txtEmail" prefWidth="280" promptText="Email Address" />
+               <Label text="Password:" />
 
-                    <PasswordField fx:id="txtPassword"
-                                   promptText="Password"
-                                   prefWidth="280"/>
+                    <PasswordField fx:id="txtPassword" prefWidth="280" promptText="Password" />
 
-                    <Button text="Login"
-                            prefWidth="280"
-                            onAction="#login"
-                            style="-fx-background-color:#5C7C4F;
-                                   -fx-text-fill:white;
-                                   -fx-font-size:15px;
-                                   -fx-font-weight:bold;" />
+                    <Button onAction="#login" prefWidth="280" style="-fx-background-color:#5C7C4F;                                    -fx-text-fill:white;                                    -fx-font-size:15px;                                    -fx-font-weight:bold;" text="Login" />
 
-                    <Hyperlink text="Forgot Password?"
-                               onAction="#forgotPassword"/>
+                    <Hyperlink onAction="#forgotPassword" text="Forgot Password?" />
 
-                    <Separator prefWidth="280"/>
+                    <Separator prefWidth="280" />
 
-                    <Label text="Don't have an account?"/>
+                    <Label text="Don't have an account?" />
 
-                    <Button text="Register"
-                            prefWidth="280"
-                            onAction="#openRegister"
-                            style="-fx-background-color:#D9B382;
-                                   -fx-text-fill:white;
-                                   -fx-font-size:15px;" />
+                    <Button onAction="#openRegister" prefWidth="280" style="-fx-background-color:#D9B382;                                    -fx-text-fill:white;                                    -fx-font-size:15px;" text="Register" />
 
                 </children>
 
                 <padding>
-                    <Insets top="30"
-                            bottom="30"
-                            left="40"
-                            right="40"/>
+                    <Insets bottom="30" left="40" right="40" top="30" />
                 </padding>
 
             </VBox>

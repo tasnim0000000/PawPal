@@ -1,10 +1,13 @@
 package com.example.pawpal.controller;
 
+import com.example.pawpal.HelloApplication;
 import com.example.pawpal.database.DatabaseConnection;
 import com.example.pawpal.session.Session;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -103,4 +106,10 @@ chkVaccinated.setSelected(false);
 txtDescription.clear();
 txtImagePath.clear();
 }
+    @FXML
+    private void goBack(ActionEvent event) throws Exception {
+
+        HelloApplication.changeScene("/fxml/SellerDashboard.fxml");
+
+    }
 }

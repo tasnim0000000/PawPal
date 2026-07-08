@@ -1,73 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.pawpal.controller.AdminDashboardController"
-            prefWidth="1200" prefHeight="750">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="750" prefWidth="1200" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pawpal.controller.AdminDashboardController">
+
+    <!-- =================== TOP BAR =================== -->
 
     <top>
-        <HBox alignment="CENTER_LEFT" spacing="20"
-              style="-fx-background-color:#355E3B;-fx-padding:15;">
+
+        <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-background-color:#355E3B;-fx-padding:15;">
+
             <children>
-                <Label text="🐾 PawPal Admin"
-                       style="-fx-font-size:24;-fx-font-weight:bold;-fx-text-fill:white;"/>
-                <Pane HBox.hgrow="ALWAYS"/>
-                <Label fx:id="lblAdmin" text="Administrator"
-                       style="-fx-text-fill:white;-fx-font-size:18;"/>
-                <Button text="Logout" onAction="#logout"/>
+
+                <Label style="-fx-font-size:24;                               -fx-font-weight:bold;                               -fx-text-fill:white;" text="🐾 PawPal Admin" />
+
+                <Pane HBox.hgrow="ALWAYS" />
+
+                <Label fx:id="lblAdmin" style="-fx-text-fill:white;                               -fx-font-size:18;" text="Administrator" />
+
+                <Button onAction="#logout" text="Logout" />
+
             </children>
+
         </HBox>
+
     </top>
 
+    <!-- =================== LEFT MENU =================== -->
+
     <left>
-        <VBox spacing="10" prefWidth="230"
-              style="-fx-background-color:#4F6D4A;-fx-padding:20;">
+
+        <VBox prefHeight="683.0" prefWidth="214.0" spacing="10" style="-fx-background-color:#4F6D4A;-fx-padding:20;">
+
             <children>
-                <Button text="🏠 Dashboard" maxWidth="Infinity" onAction="#openDashboard"/>
-                <Button text="🏪 Approve Stores" maxWidth="Infinity" onAction="#openStores"/>
-                <Button text="🐶 Manage Pets" maxWidth="Infinity" onAction="#openPets"/>
-                <Button text="⚠ Reports" maxWidth="Infinity" onAction="#openReports"/>
-                <Button text="👥 Manage Users" maxWidth="Infinity" onAction="#openUsers"/>
-                <Button text="📊 Statistics" maxWidth="Infinity" onAction="#openStatistics"/>
+
+                <Button contentDisplay="CENTER" maxWidth="Infinity" onAction="#openDashboard" prefHeight="38.0" prefWidth="96.0" text="Dashboard" />
+
+                <Button maxWidth="Infinity" onAction="#openStores" text="🏪 Approve Stores" />
+
+                <Button maxWidth="Infinity" onAction="#openPets" text="🐶 Manage Pets" />
+
+                <Button maxWidth="Infinity" onAction="#openReports" text="⚠ Reports" />
+
+                <Button maxWidth="Infinity" onAction="#openUsers" text="👥 Manage Users" />
+
+                <Button maxWidth="Infinity" onAction="#openStatistics" text="📊 Statistics" />
+
             </children>
+
         </VBox>
+
     </left>
 
+    <!-- =================== CENTER =================== -->
+
     <center>
-        <VBox spacing="20" style="-fx-background-color:#F7EAD9;-fx-padding:20;">
+
+        <VBox prefHeight="682.0" prefWidth="1004.0" spacing="20" style="-fx-background-color:#F7EAD9;-fx-padding:20;">
+
             <children>
-                <Label text="Administrator Dashboard"
-                       style="-fx-font-size:28;-fx-font-weight:bold;"/>
+
+                <Label style="-fx-font-size:28;                               -fx-font-weight:bold;" text="Administrator Dashboard" />
+
+                <!-- Summary Cards -->
 
                 <HBox spacing="20">
-                    <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
-                        <children><Label text="Pending Stores"/><Label fx:id="lblPendingStores" text="0"/></children>
-                    </VBox>
-                    <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
-                        <children><Label text="Reported Pets"/><Label fx:id="lblReports" text="0"/></children>
-                    </VBox>
-                    <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
-                        <children><Label text="Registered Users"/><Label fx:id="lblUsers" text="0"/></children>
-                    </VBox>
-                    <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
-                        <children><Label text="Total Pets"/><Label fx:id="lblPets" text="0"/></children>
-                    </VBox>
+
+                    <children>
+
+                        <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
+
+                            <children>
+
+                                <Label text="Pending Stores" />
+
+                                <Label fx:id="lblPendingStores" style="-fx-font-size:22;                                               -fx-font-weight:bold;" text="0" />
+
+                            </children>
+
+                        </VBox>
+
+                        <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
+
+                            <children>
+
+                                <Label text="Reported Pets" />
+
+                                <Label fx:id="lblReports" style="-fx-font-size:22;                                               -fx-font-weight:bold;" text="0" />
+
+                            </children>
+
+                        </VBox>
+
+                        <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
+
+                            <children>
+
+                                <Label text="Registered Users" />
+
+                                <Label fx:id="lblUsers" style="-fx-font-size:22;                                               -fx-font-weight:bold;" text="0" />
+
+                            </children>
+
+                        </VBox>
+
+                        <VBox alignment="CENTER" prefWidth="180" style="-fx-background-color:white;-fx-padding:15;">
+
+                            <children>
+
+                                <Label text="Total Pets" />
+
+                                <Label fx:id="lblPets" style="-fx-font-size:22;                                               -fx-font-weight:bold;" text="0" />
+
+                            </children>
+
+                        </VBox>
+
+                    </children>
+
                 </HBox>
 
-                <Label text="Quick Actions"
-                       style="-fx-font-size:22;-fx-font-weight:bold;"/>
+                <!-- Quick Actions -->
+
+                <Label style="-fx-font-size:22;                               -fx-font-weight:bold;" text="Quick Actions" />
 
                 <FlowPane hgap="20" vgap="20">
+
                     <children>
-                        <Button text="Approve Store" prefWidth="180" prefHeight="70" onAction="#openStores"/>
-                        <Button text="Manage Pets" prefWidth="180" prefHeight="70" onAction="#openPets"/>
-                        <Button text="View Reports" prefWidth="180" prefHeight="70" onAction="#openReports"/>
-                        <Button text="Manage Users" prefWidth="180" prefHeight="70" onAction="#openUsers"/>
+      
+                              <Button onAction="#openStores" prefHeight="70" prefWidth="180" text="Approve Store" />
+      
+                        <Button onAction="#openPets" prefHeight="70" prefWidth="180" text="Manage Pets" />
+      
+                        <Button onAction="#openUsers" prefHeight="70" prefWidth="180" text="Manage Users" />
+      
+                              <Button onAction="#openReports" prefHeight="70" prefWidth="180" text="View Reports" />
+
                     </children>
+
                 </FlowPane>
+
             </children>
+
         </VBox>
+
     </center>
+
 </BorderPane>
