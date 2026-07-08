@@ -15,7 +15,7 @@ public class Store {
     private String logoPath;
     private double averageRating;
 
-    // Convenience field populated from JOIN queries
+
     private String ownerName;
 
     public Store() {

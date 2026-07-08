@@ -16,7 +16,6 @@ public class Order {
     private LocalDateTime orderDate;
     private LocalDateTime completedAt;
 
-    // Convenience fields populated from JOIN queries
     private String petName;
     private double price;
     private String storeName;

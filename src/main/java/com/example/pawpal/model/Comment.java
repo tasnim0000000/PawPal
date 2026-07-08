@@ -10,7 +10,7 @@ public class Comment {
     private String comment;
     private LocalDateTime commentedAt;
 
-    // Convenience field populated from JOIN queries
+
     private String userName;
     private String userRole;
 

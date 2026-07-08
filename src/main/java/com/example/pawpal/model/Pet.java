@@ -19,7 +19,7 @@ public class Pet {
     private LocalDateTime createdAt;
     private boolean featured;
 
-    // Convenience fields populated from JOIN queries (not direct DB columns)
+
     private String storeName;
     private double storeAverageRating;
     private String storeApprovalStatus;

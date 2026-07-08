@@ -12,7 +12,6 @@ public class Rating {
     private String review;
     private LocalDateTime ratedAt;
 
-    // Convenience fields populated from JOIN queries
     private String petName;
     private String storeName;
     private String buyerName;

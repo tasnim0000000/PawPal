@@ -12,7 +12,7 @@ public class Report {
     private String adminNote;
     private LocalDateTime reportedAt;
 
-    // Convenience fields populated from JOIN queries
+
     private String petName;
     private String reporterName;
     private int storeId;

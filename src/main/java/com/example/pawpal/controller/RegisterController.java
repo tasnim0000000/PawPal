@@ -112,7 +112,7 @@ public class RegisterController {
             return;
         }
 
-        // Confirm Password
+
 
         if (!password.equals(confirmPassword)) {
 
@@ -131,7 +131,6 @@ public class RegisterController {
             return;
         }
 
-        // Insert User
 
         if (insertUser(name, email, password, phone, role)) {
 
