@@ -5,6 +5,8 @@ import com.example.pawpal.database.DatabaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
@@ -77,4 +79,10 @@ chkVaccinated.setSelected(false);
 txtDescription.clear();
 txtImagePath.clear();
 }
+    @FXML
+    private void goBack(ActionEvent event) throws Exception {
+
+        HelloApplication.changeScene("/fxml/SellerDashboard.fxml");
+
+    }
 }

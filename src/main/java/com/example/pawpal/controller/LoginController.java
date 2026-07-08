@@ -24,11 +24,11 @@ public class LoginController {
     @FXML
     private PasswordField txtPassword;
 
-    @FXML
-    private Button btnLogin;
-
-    @FXML
-    private Button btnRegister;
+//    @FXML
+//    private Button btnLogin;
+//
+//    @FXML
+//    private Button btnRegister;
 
     private final Connection connection =
             DatabaseConnection.getInstance().getConnection();
